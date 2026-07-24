@@ -7,6 +7,7 @@ import CompareChapterModal from '../components/ui/CompareChapterModal'
 import { useCompare } from '../context/CompareContext'
 import { useProject } from '../context/ProjectContext'
 import { useLang } from '../context/LangContext'
+import { tc } from '../i18n/content'
 import { shareOrCopy, shareBase } from '../lib/share'
 
 function useIsMobile(bp = 640) {
@@ -386,7 +387,7 @@ export default function ComparePage() {
                             {unit.name}
                           </p>
                           <p className="label-luxury mt-0.5" style={{ fontSize: mob ? '0.4rem' : '0.45rem', color: 'rgba(184,152,72,0.5)' }}>
-                            {unit.typology}
+                            {tc(unit.typology, lang)}
                           </p>
                           {(() => {
                             const desc = unitDescriptor(unit, units, lang)
@@ -455,7 +456,7 @@ export default function ComparePage() {
                                   color: isBest ? 'var(--color-accent)' : 'rgba(244,241,234,0.6)',
                                   letterSpacing: row.key === 'price' ? '0.02em' : '0',
                                 }}>
-                                {row.format(val)}
+                                {tc(row.format(val), lang)}
                               </span>
                             )}
                           </div>

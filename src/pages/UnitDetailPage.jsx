@@ -6,6 +6,7 @@ import PageTransition from '../components/layout/PageTransition'
 import UnitChapterModal from '../components/ui/UnitChapterModal'
 import { useUnit, useProject } from '../context/ProjectContext'
 import { useLang } from '../context/LangContext'
+import { tc } from '../i18n/content'
 import { useCompare } from '../context/CompareContext'
 import { shareOrCopy, shareBase } from '../lib/share'
 import { useSession } from '../context/SessionContext'
@@ -155,7 +156,7 @@ export default function UnitDetailPage() {
     { label: lang === 'es' ? 'Sup. interior': 'Interior',    value: `${unit.interior_area_m2} m²`                              },
     { label: lang === 'es' ? 'Terraza'      : 'Terrace',     value: unit.terrace_area_m2 > 0 ? `${unit.terrace_area_m2} m²` : '—' },
     { label: lang === 'es' ? 'Planta'       : 'Floor',       value: `${unit.floor}ª`                                           },
-    { label: lang === 'es' ? 'Orientación'  : 'Orientation', value: unit.orientation                                           },
+    { label: lang === 'es' ? 'Orientación'  : 'Orientation', value: tc(unit.orientation, lang)                                           },
     { label: lang === 'es' ? 'Bloque'       : 'Block',       value: unit.block                                                 },
   ]
 
@@ -245,10 +246,10 @@ export default function UnitDetailPage() {
                   )}
                 </div>
                 <h1 className="display-heading text-text" style={{ fontSize: 'clamp(1.2rem, 3.5vw, 2rem)', letterSpacing: '0.1em', lineHeight: 1.1 }}>
-                  {unit.title ?? unit.name}
+                  {tc(unit.title, lang) ?? unit.name}
                 </h1>
                 <p className="label-luxury mt-1" style={{ fontSize: '0.52rem', color: 'rgba(184,152,72,0.6)' }}>
-                  {unit.typology} · {lang === 'es' ? 'Planta' : 'Floor'} {unit.floor} · {unit.orientation}
+                  {tc(unit.typology, lang)} · {lang === 'es' ? 'Planta' : 'Floor'} {unit.floor} · {tc(unit.orientation, lang)}
                 </p>
               </div>
               <div style={{ flexShrink: 0, textAlign: mob ? 'left' : 'right' }}>
@@ -312,7 +313,7 @@ export default function UnitDetailPage() {
                 </p>
                 {unit.short_description && (
                   <p className="font-sans font-light text-text/60 mb-5" style={{ fontSize: '0.82rem', lineHeight: 1.75 }}>
-                    {unit.short_description}
+                    {tc(unit.short_description, lang)}
                   </p>
                 )}
                 {unit.highlights?.length > 0 && (
@@ -320,7 +321,7 @@ export default function UnitDetailPage() {
                     {unit.highlights.map(h => (
                       <div key={h} className="flex items-center gap-2.5">
                         <Check size={12} style={{ color: 'var(--color-accent)', flexShrink: 0 }} />
-                        <span className="label-luxury text-text/55" style={{ fontSize: '0.58rem' }}>{h}</span>
+                        <span className="label-luxury text-text/55" style={{ fontSize: '0.58rem' }}>{tc(h, lang)}</span>
                       </div>
                     ))}
                   </div>

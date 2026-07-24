@@ -6,6 +6,7 @@ import PageTransition from '../components/layout/PageTransition'
 import AvailabilityChapterModal from '../components/ui/AvailabilityChapterModal'
 import { useProject } from '../context/ProjectContext'
 import { useLang } from '../context/LangContext'
+import { tc } from '../i18n/content'
 import { useCompare } from '../context/CompareContext'
 import { useSession } from '../context/SessionContext'
 
@@ -281,11 +282,11 @@ export default function AvailabilityPage() {
                     {unit.name}
                     {unit.featured && <span className="ml-1.5 label-luxury" style={{ fontSize: '0.38rem', color: 'var(--color-accent)', verticalAlign: 'middle' }}>★</span>}
                   </span>
-                  <span className="label-luxury" style={{ fontSize: '0.65rem', color: 'rgba(244,241,234,0.78)' }}>{unit.typology}</span>
+                  <span className="label-luxury" style={{ fontSize: '0.65rem', color: 'rgba(244,241,234,0.78)' }}>{tc(unit.typology, lang)}</span>
                   <span className="label-luxury" style={{ fontSize: '0.65rem', color: 'rgba(244,241,234,0.78)' }}>{unit.floor}ª</span>
                   <span className="label-luxury" style={{ fontSize: '0.65rem', color: 'rgba(244,241,234,0.78)' }}>{unit.bedrooms}</span>
                   <span className="label-luxury" style={{ fontSize: '0.65rem', color: 'rgba(244,241,234,0.78)' }}>{unit.surface} m²</span>
-                  <span className="label-luxury" style={{ fontSize: '0.65rem', color: 'rgba(244,241,234,0.78)' }}>{unit.orientation}</span>
+                  <span className="label-luxury" style={{ fontSize: '0.65rem', color: 'rgba(244,241,234,0.78)' }}>{tc(unit.orientation, lang)}</span>
                   <span className="label-luxury" style={{ fontSize: '0.72rem', color: unit.status === 'sold' ? 'rgba(244,241,234,0.2)' : 'var(--color-text)' }}>
                     {unit.status === 'sold' ? '—' : unit.price.toLocaleString('es-ES') + ' €'}
                   </span>
@@ -395,7 +396,7 @@ export default function AvailabilityPage() {
 
                             {unit.short_description && (
                               <p className="label-luxury" style={{ fontSize: '0.52rem', color: 'rgba(244,241,234,0.35)', lineHeight: 1.7 }}>
-                                {unit.short_description}
+                                {tc(unit.short_description, lang)}
                               </p>
                             )}
                           </div>
@@ -498,7 +499,7 @@ export default function AvailabilityPage() {
                       { label: lang === 'es' ? 'Planta'  : 'Floor',   value: `${unit.floor}ª`    },
                       { label: lang === 'es' ? 'Dorm.'   : 'Beds',    value: unit.bedrooms       },
                       { label: lang === 'es' ? 'Sup.'    : 'Area',    value: `${unit.surface}m²` },
-                      { label: lang === 'es' ? 'Orient.' : 'Orient.', value: unit.orientation    },
+                      { label: lang === 'es' ? 'Orient.' : 'Orient.', value: tc(unit.orientation, lang)    },
                     ].map(d => (
                       <div key={d.label}>
                         <p className="label-luxury" style={{ fontSize: '0.42rem', color: 'rgba(184,152,72,0.4)' }}>{d.label}</p>

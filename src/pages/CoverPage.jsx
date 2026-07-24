@@ -28,8 +28,10 @@ export default function CoverPage() {
         {showVideo ? (
           <video
             src={project.heroVideo}
-            autoPlay muted loop playsInline
+            poster={project.heroImage}
+            autoPlay muted loop playsInline preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ backgroundImage: `url(${project.heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             onError={() => setVideoFailed(true)}
           />
         ) : (

@@ -5,20 +5,21 @@ import { ChevronLeft, Download, Car, Package, Check } from 'lucide-react'
 import PageTransition from '../components/layout/PageTransition'
 import { useUnit, useProject } from '../context/ProjectContext'
 import { useLang } from '../context/LangContext'
+import { tc } from '../i18n/content'
 
 // ── Print layout (white editorial) ──────────────────────────────────────────
 function PrintLayout({ unit, project, lang, selMats, matConfig, today }) {
   const t = (es, en) => lang === 'es' ? es : en
 
   const specs = [
-    { label: t('Tipología',    'Typology'),    value: unit.typology                                                      },
+    { label: t('Tipología',    'Typology'),    value: tc(unit.typology, lang)                                                      },
     { label: t('Planta',       'Floor'),        value: `${unit.floor}ª`                                                   },
     { label: t('Dormitorios',  'Bedrooms'),     value: unit.bedrooms                                                      },
     { label: t('Baños',        'Bathrooms'),    value: unit.bathrooms                                                     },
     { label: t('Sup. total',   'Total area'),   value: `${unit.built_area_m2} m²`                                        },
     { label: t('Interior',     'Interior'),     value: `${unit.interior_area_m2} m²`                                     },
     { label: t('Terraza',      'Terrace'),      value: unit.terrace_area_m2 > 0 ? `${unit.terrace_area_m2} m²` : '—'    },
-    { label: t('Orientación',  'Orientation'),  value: unit.orientation                                                   },
+    { label: t('Orientación',  'Orientation'),  value: tc(unit.orientation, lang)                                                   },
   ]
 
   const matEntries = Object.entries(selMats ?? {}).map(([cat, id]) => {
@@ -49,7 +50,7 @@ function PrintLayout({ unit, project, lang, selMats, matConfig, today }) {
         </div>
         <div style={{ textAlign: 'right' }}>
           <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', color: '#1a1a1a', margin: '0 0 2px 0' }}>
-            {unit.title ?? unit.name}
+            {tc(unit.title, lang) ?? unit.name}
           </p>
           <p style={{ fontSize: 7, color: '#888', letterSpacing: '0.1em', margin: 0 }}>
             {t('Ficha de vivienda', 'Unit brochure')} · {today}
@@ -121,7 +122,7 @@ function PrintLayout({ unit, project, lang, selMats, matConfig, today }) {
             {(unit.highlights ?? []).map(h => (
               <div key={h} style={{ display: 'flex', alignItems: 'flex-start', gap: 6 }}>
                 <span style={{ color: '#B89848', flexShrink: 0, fontSize: 9, marginTop: 1 }}>✓</span>
-                <p style={{ fontSize: 8, color: '#555', lineHeight: 1.4, margin: 0 }}>{h}</p>
+                <p style={{ fontSize: 8, color: '#555', lineHeight: 1.4, margin: 0 }}>{tc(h, lang)}</p>
               </div>
             ))}
           </div>
@@ -135,7 +136,7 @@ function PrintLayout({ unit, project, lang, selMats, matConfig, today }) {
             {t('DESCRIPCIÓN', 'DESCRIPTION')}
           </p>
           <p style={{ fontSize: 8.5, color: '#555', lineHeight: 1.75, margin: 0 }}>
-            {unit.short_description}
+            {tc(unit.short_description, lang)}
           </p>
         </div>
       )}
@@ -270,7 +271,7 @@ export default function SummaryPage() {
     { label: lang === 'es' ? 'Sup. total'  : 'Total area', value: `${unit.built_area_m2} m²`                                         },
     { label: lang === 'es' ? 'Terraza'     : 'Terrace',    value: unit.terrace_area_m2 > 0 ? `${unit.terrace_area_m2} m²` : '—'     },
     { label: lang === 'es' ? 'Planta'      : 'Floor',      value: `${unit.floor}ª`                                                   },
-    { label: lang === 'es' ? 'Orientación' : 'Orientation',value: unit.orientation                                                    },
+    { label: lang === 'es' ? 'Orientación' : 'Orientation',value: tc(unit.orientation, lang)                                                    },
   ]
 
   return (
@@ -329,10 +330,10 @@ export default function SummaryPage() {
                 <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
                   <div>
                     <h2 className="display-heading text-text" style={{ fontSize: 'clamp(1rem,3vw,1.5rem)', letterSpacing: '0.1em', lineHeight: 1.1 }}>
-                      {unit.title ?? unit.name}
+                      {tc(unit.title, lang) ?? unit.name}
                     </h2>
                     <p className="label-luxury mt-1" style={{ fontSize: '0.5rem', color: 'rgba(184,152,72,0.65)' }}>
-                      {unit.typology} · {lang === 'es' ? 'Planta' : 'Floor'} {unit.floor} · {unit.orientation}
+                      {tc(unit.typology, lang)} · {lang === 'es' ? 'Planta' : 'Floor'} {unit.floor} · {tc(unit.orientation, lang)}
                     </p>
                   </div>
                   <p className="display-heading flex-shrink-0"
@@ -381,7 +382,7 @@ export default function SummaryPage() {
                     {lang === 'es' ? 'DESCRIPCIÓN' : 'DESCRIPTION'}
                   </p>
                   <p className="font-sans font-light text-text/55" style={{ fontSize: '0.82rem', lineHeight: 1.75 }}>
-                    {unit.short_description}
+                    {tc(unit.short_description, lang)}
                   </p>
                 </div>
               )}
@@ -432,7 +433,7 @@ export default function SummaryPage() {
                     {unit.highlights.map(h => (
                       <div key={h} className="flex items-center gap-3">
                         <Check size={12} style={{ color: 'var(--color-accent)', flexShrink: 0 }} />
-                        <span className="label-luxury text-text/60" style={{ fontSize: '0.6rem' }}>{h}</span>
+                        <span className="label-luxury text-text/60" style={{ fontSize: '0.6rem' }}>{tc(h, lang)}</span>
                       </div>
                     ))}
                   </div>

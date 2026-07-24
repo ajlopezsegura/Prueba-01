@@ -6,6 +6,7 @@ import PageTransition from '../components/layout/PageTransition'
 import DecisionChapterModal from '../components/ui/DecisionChapterModal'
 import { useProject } from '../context/ProjectContext'
 import { useLang } from '../context/LangContext'
+import { tc } from '../i18n/content'
 
 export default function DecisionPage() {
   const navigate = useNavigate()
@@ -102,7 +103,7 @@ export default function DecisionPage() {
                           [lang === 'es' ? 'Planta'      : 'Floor',       `${unit.floor}ª`],
                           [lang === 'es' ? 'Dormitorios' : 'Bedrooms',    unit.bedrooms],
                           [lang === 'es' ? 'Superficie'  : 'Surface',     `${unit.surface} m²`],
-                          [lang === 'es' ? 'Orientación' : 'Orientation', unit.orientation],
+                          [lang === 'es' ? 'Orientación' : 'Orientation', tc(unit.orientation, lang)],
                         ].map(([l, v]) => (
                           <div key={l} className="flex items-baseline gap-1.5">
                             <span className="label-luxury" style={{ fontSize: '0.48rem', color: 'rgba(184,152,72,0.5)' }}>{l}</span>
