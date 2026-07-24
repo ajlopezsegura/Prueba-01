@@ -10,7 +10,7 @@ const COPY = {
     body: [
       'Cada visita deja una huella: qué se ha mirado, cuánto tiempo, qué viviendas generan interés, dónde aparecen dudas y qué decisiones avanzan o se frenan.',
       'El panel transforma ese recorrido en una lectura comercial del proyecto: inventario en movimiento, señales de decisión, comportamiento de navegación, leads cualificados y puntos de fricción dentro de la experiencia.',
-      'No se trata solo de medir tráfico, sino de entender cómo se está tomando la decisión y qué necesita el equipo comercial para actuar mejor.',
+      'En la práctica, esto es lo que te da: vendes antes, defiendes precio y sabes qué lead está caliente antes de la primera llamada.',
     ],
     button: 'ENTRAR AL PANEL',
   },
@@ -20,7 +20,7 @@ const COPY = {
     body: [
       'Every visit leaves a trace: what was looked at, for how long, which residences generate interest, where doubts appear and which decisions move forward or stall.',
       'The panel turns that journey into a commercial reading of the project: live inventory, decision signals, navigation behaviour, qualified leads and friction points within the experience.',
-      'It is not only about measuring traffic, but about understanding how the decision is being made and what the commercial team needs to act better.',
+      'In practice, this is what it gives you: you sell sooner, defend price and know which lead is warm before the first call.',
     ],
     button: 'ENTER THE PANEL',
   },
