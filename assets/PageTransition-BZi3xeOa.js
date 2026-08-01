@@ -1,0 +1,1 @@
+import{j as a,m as n}from"./index-CBjg8Vhv.js";function e({children:i,className:t=""}){return a.jsx(n.div,{initial:{opacity:0},animate:{opacity:1},exit:{opacity:0},transition:{duration:.2,ease:"easeInOut"},className:t,style:{position:"fixed",inset:0},children:i})}export{e as P};

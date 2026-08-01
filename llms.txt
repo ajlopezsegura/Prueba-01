@@ -1,0 +1,40 @@
+# Las Conchas — Marbella
+
+> Herramienta digital de presentación y ventas para Las Conchas, una promoción residencial de lujo de 24 viviendas en primera línea de playa en Marbella, España. Desarrollada por The Visuals Boutique Studio.
+
+URL pública: https://ajlopezsegura.github.io/prueba-01/
+
+## Páginas principales
+
+- [Portada](/#/): Entrada al site, vídeo hero y tagline del proyecto
+- [El Proyecto](/#/proyecto): Contexto, amenities, entorno y estado de obra
+- [Disponibilidad](/#/availability): Catálogo de viviendas con filtros por dormitorios, precio y estado
+- [Vivienda individual](/#/availability/:slug): Ficha detallada de cada unidad (plano, galería, especificaciones)
+- [Configurador 3D](/#/inmersion/:unitId): Personalización de materiales por sala (suelo, paredes, cocina)
+- [Comparador](/#/compare): Comparación lado a lado de hasta 4 viviendas
+- [Decisión](/#/decision): Resumen del recorrido y CTA hacia contacto
+- [Contacto](/#/contact): Formulario de captación de leads
+- [Mapa](/#/map): Localización del proyecto en Marbella
+- [Admin](/#/admin): Panel de gestión (protegido por contraseña)
+
+## Proyecto
+
+- **Nombre:** Las Conchas
+- **Ubicación:** Paseo Marítimo 47, Marbella, España
+- **Tipologías:** 1, 2, 3 y 4 dormitorios + áticos
+- **Superficie:** 65 – 320 m²
+- **Precios:** 350.000 – 1.200.000 €
+- **Entrega:** Q4 2026
+- **Estado:** En construcción — Fase 1, cimentación y estructura (35% completado)
+
+## Amenities
+
+Piscina infinity con vistas al Mediterráneo · Gimnasio completo · Jardines mediterráneos · Parking con cargadores eléctricos · Seguridad 24h · Spa & Wellness (sauna, hammam, circuito de aguas)
+
+## Entorno
+
+Playa a 50 m · Restaurantes a 200 m · Campo de golf a 1,2 km · Centro comercial a 1,5 km · Puerto Banús a 3 km · Aeropuerto Málaga a 45 min
+
+## Documentación completa
+
+- [llms-full.txt](https://ajlopezsegura.github.io/prueba-01/llms-full.txt): Contenido completo del site, todas las viviendas y datos técnicos
