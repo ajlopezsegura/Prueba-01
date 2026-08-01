@@ -19,12 +19,17 @@ const MapPage           = lazy(() => import('./pages/MapPage'))
 const AdminPage         = lazy(() => import('./pages/AdminPage'))
 const OnePagerPage      = lazy(() => import('./pages/OnePagerPage'))
 const LandingStandardPage = lazy(() => import('./pages/LandingStandardPage'))
+const BodaCoverPage     = lazy(() => import('./pages/boda/BodaCoverPage'))
 
 export default function App() {
   const location        = useLocation()
   const { loading }     = useProject()
 
-  if (loading) {
+  // The wedding site is a self-contained guest page: it shares the shell but
+  // none of the Las Conchas chrome, data or tracking.
+  const isBoda = location.pathname.startsWith('/boda')
+
+  if (loading && !isBoda) {
     return (
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -44,7 +49,7 @@ export default function App() {
 
   return (
     <>
-      <LuxuryCursor />
+      {!isBoda && <LuxuryCursor />}
       <AppFooter />
       <AnimatePresence mode="sync" initial={false}>
         <Suspense fallback={
@@ -74,6 +79,7 @@ export default function App() {
             <Route path="/admin"                   element={<AdminPage />} />
             <Route path="/tvbs"                    element={<OnePagerPage />} />
             <Route path="/v1"                      element={<LandingStandardPage />} />
+            <Route path="/boda"                    element={<BodaCoverPage />} />
             <Route path="/seleccion"               element={<Navigate to="/availability" replace />} />
           </Routes>
         </Suspense>

@@ -6,7 +6,7 @@ import { useLang } from '../../context/LangContext'
 import { useCompare } from '../../context/CompareContext'
 
 const HIDDEN_EXACT   = ['/']
-const HIDDEN_PREFIX  = ['/contact', '/admin', '/privacy', '/summary', '/inmersion', '/tvbs', '/v1']
+const HIDDEN_PREFIX  = ['/contact', '/admin', '/privacy', '/summary', '/inmersion', '/tvbs', '/v1', '/boda']
 
 // ── Journey steps ─────────────────────────────────────────────────────────────
 const STEPS = [

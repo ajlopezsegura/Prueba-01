@@ -6,7 +6,7 @@ const SessionContext = createContext(null)
 const PROJECT_SLUG = (import.meta.env.VITE_PROJECT_SLUG ?? 'las-conchas').trim()
 
 /* Pages that should never be tracked */
-const EXCLUDED = ['/admin', '/privacy']
+const EXCLUDED = ['/admin', '/privacy', '/boda']
 
 function generateId() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36)
