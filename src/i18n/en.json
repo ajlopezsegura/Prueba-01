@@ -1,0 +1,21 @@
+{
+  "nav_explore": "Explore",
+  "nav_map": "Floor Plan",
+  "cta_explore": "Explore the Project",
+  "cta_back_map": "Back to Floor Plan",
+  "tab_3d": "3D",
+  "tab_gallery": "Gallery",
+  "tab_video": "Video",
+  "tab_info": "Info",
+  "space_type_interior": "Interior",
+  "space_type_exterior": "Exterior",
+  "loading": "Loading",
+  "ps_connecting": "Connecting to 3D server",
+  "ps_unavailable": "3D server unavailable",
+  "ps_fallback": "Showing alternative model",
+  "model_hint": "Drag to rotate · Scroll to zoom",
+  "materials_title": "Materials",
+  "rooms_title": "Spaces",
+  "scroll_hint": "Discover the project",
+  "space_not_found": "Space not found"
+}

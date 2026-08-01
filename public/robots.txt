@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI crawlers — access explicitly granted
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://ajlopezsegura.github.io/prueba-01/llms.txt

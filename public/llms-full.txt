@@ -1,0 +1,247 @@
+# Las Conchas — Documentación completa para LLMs
+
+> Promoción residencial de lujo en primera línea de playa. 24 viviendas. Marbella, España.
+> Herramienta de presentación y ventas desarrollada por The Visuals Boutique Studio.
+> URL: https://ajlopezsegura.github.io/prueba-01/
+
+---
+
+## 1. PROYECTO
+
+**Nombre:** Las Conchas
+**Ubicación:** Paseo Marítimo 47, Marbella, España
+**Promotor / Estudio:** The Visuals Boutique Studio
+**Total viviendas:** 24
+**Tipologías:** 1D, 2D, 3D, 4D, Ático
+**Superficies:** 65 – 320 m²
+**Precios:** 350.000 – 1.200.000 €
+**Entrega:** Q4 2026
+**Estado de obra:** En construcción — Fase 1, cimentación y estructura (35% completado)
+
+**Descripción (ES):** Una residencia frente al mar donde la luz mediterránea, los materiales nobles y el sonido del océano definen cada momento del día.
+
+**Descripción (EN):** A seafront residence where Mediterranean light, noble materials and the sound of the ocean define every moment of the day.
+
+---
+
+## 2. AMENITIES
+
+### Piscina
+Piscina infinity con vistas al mar Mediterráneo. Zona de hamacas y servicio de pool bar en temporada.
+
+### Gimnasio
+Completamente equipado con máquinas de última generación, zona de pesas libres y sala de estiramiento.
+
+### Jardines
+Jardines mediterráneos diseñados por el estudio de paisajismo Amate con especies autóctonas y zonas de descanso privadas.
+
+### Parking
+Plaza de garaje incluida con cada vivienda. Puntos de recarga para vehículo eléctrico disponibles en todas las plazas.
+
+### Seguridad 24h
+Seguridad perimetral con vigilancia 24 horas, acceso por videoportero y control de accesos con tecnología biométrica.
+
+### Spa & Wellness
+Circuito de aguas termal, sauna finlandesa, hammam y sala de tratamientos. Un espacio de bienestar exclusivo para residentes.
+
+---
+
+## 3. ENTORNO
+
+| Lugar | Distancia |
+|---|---|
+| Playa (primera línea) | 50 m |
+| Restaurantes | 200 m |
+| Campo de golf | 1,2 km |
+| Centro comercial | 1,5 km |
+| Puerto Banús | 3 km |
+| Aeropuerto Málaga | 45 min |
+
+---
+
+## 4. CATÁLOGO DE VIVIENDAS
+
+### 1A — 2 Dormitorios Sur
+- **Estado:** Vendida (sold)
+- **Precio:** 420.000 €
+- **Planta:** 1 | **Orientación:** Sur | **Bloque:** A
+- **Superficie:** 98 m² (interior 82 m² + terraza 16 m²)
+- **Dormitorios:** 2 | **Baños:** 2
+- **Vistas:** Mar
+- **Incluye:** Garaje, trastero
+- **Descripción:** Apartamento sur con terraza privada y vistas al Mediterráneo. Luminosidad natural todo el día.
+- **Destacados:** Orientación sur · Terraza privada 16 m² · Vistas al Mediterráneo · Plaza de garaje incluida
+
+### 1B — 3 Dormitorios Jardín
+- **Estado:** Reservada (reserved)
+- **Precio:** 495.000 €
+- **Planta:** 1 | **Orientación:** Norte | **Bloque:** B
+- **Superficie:** 120 m² (interior 102 m²)
+- **Dormitorios:** 3 | **Baños:** 2
+- **Vistas:** Jardín
+- **Incluye:** Garaje
+- **Descripción:** Amplio apartamento de 3 dormitorios con acceso directo al jardín privado y zona de día diferenciada.
+
+### 1C — 2 Dormitorios Este ⭐ DISPONIBLE
+- **Estado:** Disponible (available)
+- **Precio:** 365.000 €
+- **Planta:** 1 | **Orientación:** Este | **Bloque:** C
+- **Superficie:** 85 m² (interior 72 m² + terraza 13 m²)
+- **Dormitorios:** 2 | **Baños:** 1
+- **Vistas:** Piscina
+- **Incluye:** Garaje
+- **Descripción:** Apartamento orientado al este con luminosidad natural en las mañanas y terraza con vistas a la piscina.
+
+### 2A — 2 Dormitorios Mar ⭐ DISPONIBLE
+- **Estado:** Disponible (available)
+- **Precio:** 440.000 €
+- **Planta:** 2 | **Orientación:** Sur | **Bloque:** A
+- **Superficie:** 100 m² (interior 84 m² + terraza 16 m²)
+- **Dormitorios:** 2 | **Baños:** 2
+- **Vistas:** Mar
+- **Incluye:** Garaje, trastero
+- **Descripción:** Apartamento de 2 dormitorios con terraza sur y vistas directas al Mediterráneo desde la segunda planta.
+
+### 2B — 3 Dormitorios Jardín ⭐ DISPONIBLE
+- **Estado:** Disponible (available)
+- **Precio:** 510.000 €
+- **Planta:** 2 | **Orientación:** Norte | **Bloque:** B
+- **Superficie:** 125 m² (interior 106 m² + terraza 19 m²)
+- **Dormitorios:** 3 | **Baños:** 2
+- **Vistas:** Jardín
+- **Incluye:** Garaje, trastero
+- **Descripción:** 3 dormitorios con zona de estar diferenciada, cocina independiente y acabados de primera calidad.
+
+### 2C — 1 Dormitorio Oeste
+- **Estado:** Vendida (sold)
+- **Precio:** 295.000 €
+- **Planta:** 2 | **Orientación:** Oeste | **Bloque:** C
+- **Superficie:** 68 m² (interior 60 m² + terraza 8 m²)
+- **Dormitorios:** 1 | **Baños:** 1
+- **Vistas:** Piscina
+- **Incluye:** Garaje
+- **Descripción:** Apartamento compacto de 1 dormitorio con terraza oeste y vistas a la piscina. Perfecto como inversión.
+
+### 3A — 3 Dormitorios Panorámico ⭐ DISPONIBLE · DESTACADA
+- **Estado:** Disponible (available)
+- **Precio:** 560.000 €
+- **Planta:** 3 | **Orientación:** Sur | **Bloque:** A
+- **Superficie:** 130 m² (interior 110 m² + terraza 20 m²)
+- **Dormitorios:** 3 | **Baños:** 2
+- **Vistas:** Mar (panorámico)
+- **Incluye:** Garaje, trastero
+- **Descripción:** Unidad destacada. 3 dormitorios con gran terraza sur, vistas panorámicas al Mediterráneo y acabados premium.
+
+### 3B — 2 Dormitorios Mar ⭐ DISPONIBLE
+- **Estado:** Disponible (available)
+- **Precio:** 475.000 €
+- **Planta:** 3 | **Orientación:** Sur | **Bloque:** B
+- **Superficie:** 105 m² (interior 88 m² + terraza 17 m²)
+- **Dormitorios:** 2 | **Baños:** 2
+- **Vistas:** Mar
+- **Incluye:** Garaje
+- **Descripción:** 2 dormitorios con terraza sur, muy luminoso y tranquilo. Una de las mejores relaciones precio-calidad del edificio.
+
+### 3C — 4 Dormitorios Familiar
+- **Estado:** Reservada (reserved)
+- **Precio:** 720.000 €
+- **Planta:** 3 | **Orientación:** Sur | **Bloque:** C
+- **Superficie:** 165 m² (interior 138 m² + terraza 27 m²)
+- **Dormitorios:** 4 | **Baños:** 3
+- **Vistas:** Mar
+- **Incluye:** Garaje, trastero
+- **Descripción:** 4 dormitorios con gran terraza sur ideal para familias. Máxima amplitud y vistas directas al mar.
+
+### 4A — 4 Dormitorios Premium ⭐ DISPONIBLE · DESTACADA
+- **Estado:** Disponible (available)
+- **Precio:** 810.000 €
+- **Planta:** 4 | **Orientación:** Sur | **Bloque:** A
+- **Superficie:** 180 m² (interior 150 m² + terraza 30 m²)
+- **Dormitorios:** 4 | **Baños:** 3
+- **Vistas:** Mar
+- **Incluye:** Garaje, trastero
+- **Descripción:** 4 dormitorios con terraza de 30 m² y vistas al mar desde todas las estancias principales.
+
+### 4B — 3 Dormitorios Piscina ⭐ DISPONIBLE
+- **Estado:** Disponible (available)
+- **Precio:** 590.000 €
+- **Planta:** 4 | **Orientación:** Este | **Bloque:** B
+- **Superficie:** 135 m² (interior 114 m² + terraza 21 m²)
+- **Dormitorios:** 3 | **Baños:** 2
+- **Vistas:** Piscina
+- **Incluye:** Garaje, trastero
+- **Descripción:** 3 dormitorios con terraza este y espléndidas vistas a la piscina y los jardines desde la cuarta planta.
+
+### ÁTICO 1 — La joya del edificio ⭐ DISPONIBLE · DESTACADA
+- **Estado:** Disponible (available)
+- **Precio:** 1.150.000 €
+- **Planta:** 5 (ático) | **Orientación:** Sur | **Bloque:** A
+- **Superficie:** 280 m² (interior 210 m² + terraza 70 m²)
+- **Dormitorios:** 4 | **Baños:** 4
+- **Vistas:** Panorámica 360° al Mediterráneo
+- **Incluye:** Garaje doble, trastero
+- **Descripción:** Ático exclusivo con terraza de 70 m² y vistas panorámicas a 360° al Mediterráneo. La pieza más singular del edificio.
+
+---
+
+## 5. RESUMEN DE DISPONIBILIDAD
+
+| Estado | Unidades |
+|---|---|
+| Disponibles | 1C, 2A, 2B, 3A, 3B, 4A, 4B, ÁTICO 1 (8 unidades) |
+| Reservadas | 1B, 3C (2 unidades) |
+| Vendidas | 1A, 2C (2 unidades) |
+
+---
+
+## 6. MATERIALES DEL CONFIGURADOR
+
+### Suelo
+- Roble Natural (#C8A07A)
+- Caliza Natural (#E8E0D0)
+- Microcemento (#9A9690)
+
+### Paredes
+- Blanco Roto (#F2EEE8)
+- Caliza Pintada (#D8CFC0)
+- Grafito (#4A4A4A)
+
+### Cocina
+- Mármol Marquina (#2A2520)
+- Mármol Bianco (#F0EDE8)
+- Latón Mate (#B89848)
+
+---
+
+## 7. ARQUITECTURA TÉCNICA
+
+**Stack:** React 18 + Vite + Tailwind CSS + Framer Motion + Supabase (PostgreSQL)
+**Routing:** HashRouter — todas las rutas usan `/#/ruta`
+**Deploy:** GitHub Pages — https://ajlopezsegura.github.io/prueba-01/
+**Base de datos:** Supabase (projects, units, leads, page_sessions)
+**Analytics:** Session tracking propio (sin cookies, sessionStorage + localStorage)
+**Admin:** Panel en /#/admin, protegido por contraseña (VITE_ADMIN_PASSWORD)
+
+### Rutas
+```
+/#/                        Portada
+/#/proyecto                Contexto del proyecto
+/#/availability            Catálogo de viviendas
+/#/availability/:slug      Ficha de vivienda (ej: /#/availability/3a)
+/#/inmersion/:unitId       Configurador 3D
+/#/compare                 Comparador
+/#/decision                Decisión
+/#/contact                 Formulario de contacto
+/#/summary/:slug           Dossier PDF
+/#/map                     Mapa
+/#/privacy                 Privacidad
+/#/admin                   Panel de administración
+```
+
+---
+
+## 8. CONTACTO Y PERMISOS
+
+Este contenido es material de marketing y ventas de Las Conchas / The Visuals Boutique Studio.
+Los LLMs pueden leer, indexar y resumir este contenido para ayudar a usuarios con preguntas sobre el proyecto.
+Para consultas comerciales: contactar a través del formulario en /#/contact.

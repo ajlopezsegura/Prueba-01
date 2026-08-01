@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* THE VISUALS BOUTIQUE STUDIO — Brand Palette */
+  --color-bg:           #252D3A;
+  --color-bg-card:      #364556;
+  --color-bg-deep:      #1A2130;
+  --color-text:         #F4F1EA;
+  --color-text-muted:   rgba(244,241,234,0.80);
+  --color-bone:         #E5E2DA;
+  --color-accent:       #B89848;
+  --color-accent-light: #CEB060;
+  --color-accent-dim:   rgba(184,152,72,0.20);
+  --color-signature:    #7A2318;
+  --color-border:       rgba(184,152,72,0.18);
+  --header-h:           56px;
+}
+
+/* Cursor hiding is toggled dynamically by LuxuryCursor based on real mouse movement */
+html.luxury-cursor-active, html.luxury-cursor-active *,
+html.luxury-cursor-active *::before, html.luxury-cursor-active *::after {
+  cursor: none !important;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+  font-family: Montserrat, sans-serif;
+}
+
+/* Accent rule */
+.accent-rule {
+  width: 36px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+@media (min-width: 640px) {
+  .accent-rule { width: 48px; }
+}
+
+.gold-rule { width: 36px; height: 1px; background-color: var(--color-accent); }
+@media (min-width: 640px) {
+  .gold-rule { width: 48px; }
+}
+
+/* Label utility */
+.label-luxury {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+@media (min-width: 640px) {
+  .label-luxury { font-size: 0.72rem; letter-spacing: 0.18em; }
+}
+
+/* Display heading */
+.display-heading {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+}
+
+/* Pixel Streaming */
+.ps-container video {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Lightbox */
+.yarl__root { --yarl__color_backdrop: rgba(26, 33, 48, 0.97); }
+
+/* Scrollbar (desktop only) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
+}

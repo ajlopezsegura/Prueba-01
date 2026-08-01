@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "tipo": "Auditoría estratégica + mapa de potencial",
+    "fecha": "2026-04-17",
+    "proyecto_base": "Las Conchas — ajlopezsegura/prueba-01",
+    "stack": "React 18 + Vite + Tailwind CSS + Framer Motion + Supabase (PostgreSQL/JSONB)",
+    "rama_deploy": "claude/check-progress-VPlBw → GitHub Pages",
+    "url": "https://ajlopezsegura.github.io/prueba-01/"
+  },
+
+  "proyecto_actual": {
+    "nombre": "Las Conchas",
+    "descripcion": "App de ventas de lujo para promoción residencial de 24 unidades en primera línea de playa en Marbella. Creada para The Visuals Boutique Studio.",
+    "estado_completitud": "92%",
+    "listo_produccion": true,
+    "paginas_activas": 12,
+    "paginas_totales_codificadas": 15,
+    "rutas": {
+      "/": "CoverPage — hero con vídeo/imagen, tagline, CTA",
+      "/proyecto": "ContextPage — información del proyecto, amenities, construcción, entorno",
+      "/availability": "AvailabilityPage — catálogo de unidades con filtros y orden",
+      "/availability/:slug": "UnitDetailPage — detalle de unidad: specs, galería, plano, compartir",
+      "/inmersion/:unitId": "ImmersionPage — configurador de materiales por sala + hora del día",
+      "/decision": "DecisionPage — formulario rápido de contacto/interés",
+      "/compare": "ComparePage — comparativa side-by-side hasta 3 unidades",
+      "/contact": "ContactPage — formulario de lead → Supabase",
+      "/summary/:slug": "SummaryPage — dossier imprimible en PDF por unidad",
+      "/map": "MapPage — plano SVG del edificio",
+      "/privacy": "PrivacyPage — aviso RGPD/LOPDGDD",
+      "/admin": "AdminPage — panel de gestión protegido por contraseña"
+    },
+    "datos": {
+      "unidades": 12,
+      "tipologias": ["1D", "2D", "3D", "4D", "Ático"],
+      "rango_precios": "€295k–€1.15M",
+      "superficie_rango": "65–320 m²",
+      "amenities": 6,
+      "nearby_points": 6,
+      "materiales_categorias": 3,
+      "imagenes_locales": 20,
+      "video": true
+    },
+    "issues_conocidos": [
+      "Columnas tagline/tagline_en no existen en Supabase (hay fallback hardcoded)",
+      "4 amenities usan imágenes Unsplash (Gimnasio, Parking, Seguridad, Spa)",
+      "Compare selection se pierde al recargar (no persiste en localStorage)",
+      "Three.js incluido pero apenas usado (peso de bundle innecesario)",
+      "RLS de Supabase no verificado en schema.sql",
+      "i18n duplicado: existe t() en LangContext pero páginas usan ternarios hardcoded"
+    ]
+  },
+
+  "arquitectura_template": {
+    "descripcion": "Este codebase es un template reutilizable para cualquier producto de alta consideración — donde el cliente necesita explorar, comparar, personalizar y contactar antes de comprar.",
+    "capas_reutilizables": {
+      "analytics_engine": {
+        "archivo": "src/context/SessionContext.jsx",
+        "descripcion": "Sistema de tracking anónimo sin cookies: visitor_id persistente, trail JSONB de acciones, detección de referrer (Google/IG/WA/TikTok/directo), conversión a lead, número de visita",
+        "reutilizabilidad": "100% — sólo cambiar keys de localStorage (tvbs_vid → [marca]_vid)"
+      },
+      "admin_crm": {
+        "archivo": "src/pages/AdminPage.jsx",
+        "descripcion": "Panel con 3 tabs: gestión de estado de productos, leads con temperatura hot/cold y trail expandible, actividad anónima con badges de fuente/recurrencia/profundidad de recorrido",
+        "reutilizabilidad": "85% — adaptar columnas y estados por vertical"
+      },
+      "comparador": {
+        "archivo": "src/context/CompareContext.jsx + src/pages/ComparePage.jsx",
+        "descripcion": "Selección de hasta 3 ítems para comparativa side-by-side con resaltado de mejor valor",
+        "reutilizabilidad": "90% — cambiar atributos comparados"
+      },
+      "design_system": {
+        "archivos": ["src/styles/index.css", "tailwind.config.js"],
+        "descripcion": "Variables CSS (--color-bg, --color-accent, --color-text), clases .label-luxury y .display-heading, LuxuryCursor dorado, patrones hover inline",
+        "reutilizabilidad": "100% — cambiar --color-accent y --color-bg para rethema completo"
+      },
+      "footer_journey": {
+        "archivo": "src/components/layout/AppFooter.jsx",
+        "descripcion": "Footer fijo 52px con progreso de recorrido (4 pasos) + botón CTA centrado. Se oculta en rutas configuradas.",
+        "reutilizabilidad": "100% — cambiar array STEPS y getStepIndex()"
+      },
+      "formulario_lead": {
+        "archivo": "src/pages/ContactPage.jsx",
+        "descripcion": "Formulario con validación, campos configurables, envío a Supabase, estado enviado con animación, copia trail de sesión al lead",
+        "reutilizabilidad": "90% — añadir/quitar campos por vertical"
+      },
+      "catalogo_filtrable": {
+        "archivo": "src/pages/AvailabilityPage.jsx",
+        "descripcion": "Catálogo con filtros múltiples, orden configurable, vistas tabla/grid, barra de comparar inline",
+        "reutilizabilidad": "70% — adaptar filtros a los atributos del producto"
+      },
+      "detalle_producto": {
+        "archivo": "src/pages/UnitDetailPage.jsx",
+        "descripcion": "Vista de detalle: hero, specs en grid, highlights, galería con lightbox, compartir, CTA a contacto y a inmersión",
+        "reutilizabilidad": "80% — adaptar campos de specs"
+      },
+      "dossier_pdf": {
+        "archivo": "src/pages/SummaryPage.jsx",
+        "descripcion": "Hoja imprimible (print-optimizada) con toda la info de la unidad + materiales seleccionados",
+        "reutilizabilidad": "75% — adaptar secciones al producto"
+      },
+      "cliente_portal": {
+        "descripcion": "Patrón ObraPage de CarpinteriasMVP: acceso por código único, progreso de fases con timeline, notas por fase. No está en Las Conchas pero es una extensión directa.",
+        "reutilizabilidad": "85% para cualquier vertical con proceso/seguimiento"
+      }
+    },
+    "supabase_tablas": {
+      "projects": "Datos del proyecto/empresa",
+      "units": "Catálogo de productos (unidades, sistemas, obras...)",
+      "leads": "Formularios de contacto con session_trail JSONB",
+      "page_sessions": "Sesiones anónimas: visitor_id, trail, referrer, converted"
+    },
+    "patrones_criticos": [
+      "HashRouter — necesario para GitHub Pages (sin servidor)",
+      "AnimatePresence mode='sync' — NO cambiar a 'wait' (bug pantalla en blanco)",
+      "FilterControls llamado como función {FilterControls({})} — evita pérdida de foco en inputs",
+      "React.lazy + Suspense — code splitting en todas las páginas",
+      "useIsMobile(bp=640) — hook JS para estilos responsivos inline"
+    ]
+  },
+
+  "verticales_potenciales": {
+    "descripcion": "Cualquier producto o servicio donde el cliente tiene un proceso de descubrimiento → exploración → personalización → decisión → seguimiento. Alta consideración, ticket medio-alto.",
+    "mapa": [
+      {
+        "vertical": "Inmobiliaria de obra nueva",
+        "ejemplo": "Las Conchas (este proyecto)",
+        "fit": "100%",
+        "producto_catalogo": "Viviendas / unidades",
+        "configurador": "Materiales y acabados por sala",
+        "portal_cliente": "Estado de obra y fases de construcción",
+        "admin_crm": "Gestión de disponibilidad, leads, actividad",
+        "diferenciador_clave": "Comparador de unidades + dossier PDF por vivienda"
+      },
+      {
+        "vertical": "Carpintería / aluminio / PVC",
+        "ejemplo": "CarpinteriasMVP (Luminal — ya desarrollado)",
+        "fit": "95%",
+        "producto_catalogo": "Sistemas (ventanas, puertas, cerramientos, fachadas)",
+        "configurador": null,
+        "portal_cliente": "Seguimiento de obra: fases, estado, notas por fase",
+        "admin_crm": "Obras activas, presupuestos, actividad",
+        "diferenciador_clave": "Acceso por código único para cliente: ve su obra en tiempo real"
+      },
+      {
+        "vertical": "Cocinas / mobiliario a medida",
+        "ejemplo": "Showroom + configurador + portal entrega",
+        "fit": "90%",
+        "producto_catalogo": "Modelos de cocina / composiciones",
+        "configurador": "Frentes, encimeras, electrodomésticos, colores",
+        "portal_cliente": "Seguimiento de fabricación y entrega",
+        "admin_crm": "Pedidos, leads, instalaciones en curso",
+        "diferenciador_clave": "Configurador visual de composición + dossier de pedido"
+      },
+      {
+        "vertical": "Piscinas / jardinería",
+        "ejemplo": "Catálogo de modelos + configurador de acabados",
+        "fit": "85%",
+        "producto_catalogo": "Modelos de piscina, tipo de jardín",
+        "configurador": "Acabados, iluminación, sistemas de agua",
+        "portal_cliente": "Fases de obra: excavación, estructura, acabados, entrega",
+        "admin_crm": "Obras en curso, presupuestos, visitas",
+        "diferenciador_clave": "Portal de seguimiento de obra + galería de proyectos terminados"
+      },
+      {
+        "vertical": "Interiorismo / reformas de lujo",
+        "ejemplo": "Studio presentation + portfolio + presupuesto",
+        "fit": "88%",
+        "producto_catalogo": "Proyectos / estilos / ambientes",
+        "configurador": "Materiales, paletas, mobiliario",
+        "portal_cliente": "Estado de reforma: fases semana a semana",
+        "admin_crm": "Proyectos activos, clientes, proveedores",
+        "diferenciador_clave": "Portfolio interactivo con antes/después + seguimiento por cliente"
+      },
+      {
+        "vertical": "Yates / embarcaciones de lujo",
+        "ejemplo": "Catálogo + configurador + broker",
+        "fit": "80%",
+        "producto_catalogo": "Modelos de yate, chárter, esloras",
+        "configurador": "Acabados, equipamiento, rutas",
+        "portal_cliente": "Estado de construcción o preparación de entrega",
+        "admin_crm": "Leads de alta intención, historial de interés",
+        "diferenciador_clave": "Comparador de especificaciones técnicas + dossier imprimible"
+      },
+      {
+        "vertical": "Vehículos premium / clásicos",
+        "ejemplo": "Concesionario de nicho o dealer de clásicos",
+        "fit": "78%",
+        "producto_catalogo": "Vehículos en stock con ficha técnica completa",
+        "configurador": "Color, tapicería, extras",
+        "portal_cliente": "Estado de pedido / preparación / entrega",
+        "admin_crm": "Leads, test drives, cartera de clientes",
+        "diferenciador_clave": "Comparador técnico + dossier + tracking de pedido"
+      },
+      {
+        "vertical": "Hoteles boutique / villas turísticas",
+        "ejemplo": "Presentación de propiedad + disponibilidad + reserva",
+        "fit": "75%",
+        "producto_catalogo": "Habitaciones / suites / villas",
+        "configurador": "Extras, servicios, fechas",
+        "portal_cliente": "Confirmación de reserva + servicios contratados",
+        "admin_crm": "Reservas, leads, temporadas",
+        "diferenciador_clave": "Experiencia visual de alta gama antes de reservar"
+      },
+      {
+        "vertical": "Energía solar / instalaciones industriales",
+        "ejemplo": "Propuesta de instalación + seguimiento de obra",
+        "fit": "72%",
+        "producto_catalogo": "Tipos de instalación, potencias, sistemas",
+        "configurador": null,
+        "portal_cliente": "Fases: estudio, tramitación, instalación, conexión, monitoreo",
+        "admin_crm": "Presupuestos, instalaciones en curso, mantenimientos",
+        "diferenciador_clave": "Portal cliente: del presupuesto a la conexión a red + monitoreo"
+      },
+      {
+        "vertical": "Aeronáutica / aviación privada",
+        "ejemplo": "Broker de aeronaves o servicios de charter",
+        "fit": "65%",
+        "producto_catalogo": "Aeronaves disponibles: specs, autonomía, capacidad",
+        "configurador": "Interior, rutas habituales, servicios",
+        "portal_cliente": null,
+        "admin_crm": "Leads de alto valor, historial de consultas",
+        "diferenciador_clave": "Presentación premium + comparativa técnica + contacto discreto"
+      }
+    ]
+  },
+
+  "features_a_desarrollar": {
+    "alto_impacto": [
+      {
+        "feature": "Portal de cliente con acceso por código",
+        "descripcion": "URL única por cliente (o código) que muestra el estado de su proyecto/pedido/obra en tiempo real. El comercial actualiza desde admin; el cliente ve el progreso.",
+        "ya_implementado_en": "CarpinteriasMVP (ObraPage)",
+        "esfuerzo": "bajo — patrón ya existe, adaptar por vertical"
+      },
+      {
+        "feature": "Notificaciones push/email en cambio de estado",
+        "descripcion": "Cuando el admin cambia una fase de 'pendiente' a 'en_curso' o 'completada', el cliente recibe email/push automático.",
+        "esfuerzo": "medio — Supabase Edge Functions + servicio de email (Resend/Postmark)"
+      },
+      {
+        "feature": "Galería de proyectos terminados",
+        "descripcion": "Portafolio filtrable de obras completadas con fotos antes/después, cliente (anonimizado), sistema/tipología. Refuerza confianza y sirve de inspiración.",
+        "esfuerzo": "bajo — extensión de SistemasPage o nueva ruta /portfolio"
+      },
+      {
+        "feature": "Calculadora de presupuesto estimado",
+        "descripcion": "Wizard de 3-4 pasos: tipo de producto → dimensiones aproximadas → acabado → genera rango de precio estimado antes de pedir presupuesto formal.",
+        "esfuerzo": "medio"
+      },
+      {
+        "feature": "CRM completo en admin",
+        "descripcion": "Añadir pipeline visual (Nuevo → Contactado → Presupuesto enviado → Negociación → Cerrado), fechas de seguimiento, notas por lead, asignación a comercial.",
+        "esfuerzo": "alto — nueva tabla Supabase + UI de pipeline"
+      },
+      {
+        "feature": "Compartir ficha de producto por WhatsApp/link",
+        "descripcion": "Botón nativo de compartir que genera link directo a la unidad/sistema con OG preview. Ya existe share.js en Las Conchas.",
+        "esfuerzo": "muy bajo — extender share.js"
+      }
+    ],
+    "medio_impacto": [
+      "Persistencia de comparador en localStorage",
+      "Modo oscuro/claro toggle (cambiar --color-bg y --color-text)",
+      "Búsqueda rápida por nombre/referencia dentro del catálogo",
+      "Filtro por estado de disponibilidad en admin (obras activas vs completadas)",
+      "Export de leads a CSV desde admin",
+      "Comentarios/mensajes cliente↔empresa dentro del portal de obra"
+    ],
+    "bajo_impacto": [
+      "Consolidar i18n a un solo patrón",
+      "Eliminar Three.js si no se usa",
+      "Service Worker para modo offline",
+      "Comparar en mobile (actualmente sólo desktop)"
+    ]
+  },
+
+  "modelo_negocio_template": {
+    "descripcion": "Este template puede convertirse en un producto SaaS o en un servicio de agencia con componente de software.",
+    "opciones": [
+      {
+        "modelo": "Servicio de agencia",
+        "descripcion": "The Visuals Boutique Studio ofrece la app como parte del servicio de presentación de proyectos. Se personaliza por cliente (imágenes, colores, datos) en 1-2 semanas.",
+        "ventaja": "Tiempo de entrega muy bajo al reutilizar el template",
+        "precio_referencia": "€3.000–€8.000 por implementación + mantenimiento mensual"
+      },
+      {
+        "modelo": "SaaS multi-tenant",
+        "descripcion": "Una instancia del backend (Supabase) con múltiples proyectos/empresas. Cada cliente accede a su dashboard, actualiza su catálogo y portal de clientes.",
+        "ventaja": "Escala sin multiplicar costes de infraestructura",
+        "requiere": "Auth por tenant, Row-Level Security estricto, UI de onboarding"
+      },
+      {
+        "modelo": "White-label por vertical",
+        "descripcion": "Un fork del template por sector: uno para inmobiliaria, uno para carpintería, uno para cocinas. Cada fork tiene los campos y flujos del sector.",
+        "ventaja": "Menos personalización por cliente, menor coste de soporte",
+        "ejemplos_existentes": ["Las Conchas (inmobiliaria)", "CarpinteriasMVP (aluminio/PVC)"]
+      }
+    ]
+  },
+
+  "contexto_para_nueva_sesion": {
+    "instruccion": "Copia este bloque entero como primer mensaje en una nueva sesión de Claude Code para dar contexto completo.",
+    "contenido": {
+      "proyecto": "Las Conchas — app de ventas de lujo para promoción inmobiliaria en Marbella",
+      "repo": "ajlopezsegura/Prueba-01",
+      "rama": "claude/check-progress-VPlBw",
+      "directorio_local": "/home/user/Prueba-01",
+      "stack": "React 18 + Vite + Tailwind + Framer Motion + Supabase + HashRouter",
+      "git_commits": "git -c gpg.format=openpgp -c commit.gpgsign=false commit",
+      "git_push": "git push -u origin claude/check-progress-VPlBw",
+      "notas_criticas": [
+        "AnimatePresence mode='sync' — NO cambiar a 'wait'",
+        "FilterControls se llama como función {FilterControls({})} no como componente",
+        "useIsMobile(bp=640) definido localmente en cada archivo que lo usa",
+        "Proxy local sólo autoriza el repo ajlopezsegura/Prueba-01",
+        "CLAUDE.md en la raíz del repo tiene toda la documentación del proyecto"
+      ]
+    }
+  }
+}

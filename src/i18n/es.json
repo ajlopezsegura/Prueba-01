@@ -1,0 +1,21 @@
+{
+  "nav_explore": "Explorar",
+  "nav_map": "Planta",
+  "cta_explore": "Explorar el Proyecto",
+  "cta_back_map": "Volver a Planta",
+  "tab_3d": "3D",
+  "tab_gallery": "Galería",
+  "tab_video": "Vídeo",
+  "tab_info": "Info",
+  "space_type_interior": "Interior",
+  "space_type_exterior": "Exterior",
+  "loading": "Cargando",
+  "ps_connecting": "Conectando con el servidor 3D",
+  "ps_unavailable": "Servidor 3D no disponible",
+  "ps_fallback": "Mostrando modelo alternativo",
+  "model_hint": "Arrastrar para rotar · Scroll para zoom",
+  "materials_title": "Materiales",
+  "rooms_title": "Espacios",
+  "scroll_hint": "Descubre el proyecto",
+  "space_not_found": "Espacio no encontrado"
+}
